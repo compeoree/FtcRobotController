@@ -27,8 +27,9 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package org.firstinspires.ftc.robotcontroller.external.samples;
+package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
@@ -48,8 +49,7 @@ import com.qualcomm.robotcore.hardware.Servo;
  * Use Android Studio to Copy this Class, and Paste it into your team's code folder with a new name.
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
-@TeleOp(name = "Concept: Scan Servo", group = "Concept")
-@Disabled
+@Autonomous(name = "Concept: Scan Servo", group = "Concept")
 public class ConceptScanServo extends LinearOpMode {
 
     static final double INCREMENT   = 0.01;     // amount to slew servo each CYCLE_MS cycle
@@ -77,7 +77,8 @@ public class ConceptScanServo extends LinearOpMode {
 
 
         // Scan servo till stop pressed.
-        while(opModeIsActive()){
+        //while(opModeIsActive()){
+        while(true){
 
             // slew the servo, according to the rampUp (direction) variable.
             if (rampUp) {
@@ -109,7 +110,7 @@ public class ConceptScanServo extends LinearOpMode {
         }
 
         // Signal done;
-        telemetry.addData(">", "Done");
-        telemetry.update();
+        //telemetry.addData(">", "Done");
+        //telemetry.update();
     }
 }
